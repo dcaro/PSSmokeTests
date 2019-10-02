@@ -18,6 +18,7 @@ Get-AzResourceGroup -Name $myResourceGroup
 New-AzDnsZone -Name $dnsZoneName -Location global -ResourceGroupName $myResourceGroup
 New-AzDnsRecordSet -Name $dnsRecordSetName -ZoneName $dnsZoneName -ResourceGroupName $myResourceGroup -ARecord $IPAddress1, $IPAddress2  -TimeToLive 3600
 
+Get-AzDnsZone -Name $dnsZoneName -ResourceGroupName $myResourceGroup
 Get-AzDnsRecordSet -Name $dnsRecordSetName -ResourceGroupName $myResourceGroup -ZoneName $dnsZoneName -RecordType A 
 
 # Clean up

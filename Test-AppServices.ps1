@@ -23,3 +23,5 @@ New-AzWebApp -Name $webappname -ResourceGroupName $myResourceGroup -Location $lo
 # Configure GitHub deployment from your GitHub repo and deploy once.
 Set-AzWebAppSourceControl -Name $webappname -ResourceGroupName $myResourceGroup -RepoUrl $gitrepo
 Get-AzWebAppSourceControl -Name $webappname -ResourceGroupName $myResourceGroup 
+
+Remove-AzResourceGroup -Name $myResourceGroup

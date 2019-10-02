@@ -24,3 +24,6 @@ New-AzVnetSubnet -Name $Subnet2Name -ResourceGroupName $myResourceGroup -VnetNam
 
 Get-AzVnetSubnet -Name $Subnet1Name -ResourceGroupName $myResourceGroup -VnetName $myVirtualNetwork
 Get-AzVnetSubnet -Name $Subnet2Name -ResourceGroupName $myResourceGroup -VnetName $myVirtualNetwork 
+
+Remove-AzVnet -Name $myVirtualNetwork -ResourceGroupName $myResourceGroup
+Remove-AzResourceGroup -Name $myResourceGroup

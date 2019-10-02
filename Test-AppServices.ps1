@@ -1,7 +1,6 @@
 # This script creates an Azure WebApp and set it to have Continuous Integration with github
-
-
-
+# Inspired from: https://docs.microsoft.com/en-us/azure/app-service/scripts/powershell-deploy-github?toc=%2fpowershell%2fmodule%2ftoc.json
+ß
 # Replace the following URL with a public GitHub repo URL
 $gitrepo="https://github.com/dcaro/app-service-web-dotnet-get-started.git"
 $webappname="mywebapp$(Get-Random -Maximum 100)"

@@ -1,9 +1,6 @@
-# This script creates an Azure WebApp and set it to have Continuous Integration with github
-# Inspired from: https://docs.microsoft.com/en-us/azure/app-service/scripts/powershell-deploy-github?toc=%2fpowershell%2fmodule%2ftoc.json
+# This script create a WebAppl and get associated logs
 
-# Replace the following URL with a public GitHub repo URL
-$gitrepo="https://github.com/dcaro/app-service-web-dotnet-get-started.git"
-$webappname="mywebapp$(Get-Random -Maximum 100)"
+$webappname="dcarowebapp$(Get-Random -Maximum 100)"
 $myResourceGroup="dcaro$(Get-Random -Maximum 100)"
 $location="East US"
 
@@ -20,8 +17,4 @@ $AppSvcPlanId=(Get-AzAppServicePlan -Name $webappname -ResourceGroupName $myReso
 #New-AzWebApp -Name $webappname -Location $location -AppServicePlan $webappname -ResourceGroupName $myResourceGroup
 New-AzWebApp -Name $webappname -ResourceGroupName $myResourceGroup -Location $location -ServerFarmId $AppSvcPlanId
 
-# Configure GitHub deployment from your GitHub repo and deploy once.
-Set-AzWebAppSourceControl -Name $webappname -ResourceGroupName $myResourceGroup -RepoUrl $gitrepo
-Get-AzWebAppSourceControl -Name $webappname -ResourceGroupName $myResourceGroup 
-
-Remove-AzResourceGroup -Name $myResourceGroup
+Get-Azlog -ResourceGroupName $myResourceGroup

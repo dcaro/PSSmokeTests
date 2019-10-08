@@ -3,7 +3,7 @@
 
 # Replace the following URL with a public GitHub repo URL
 $gitrepo="https://github.com/dcaro/app-service-web-dotnet-get-started.git"
-$webappname="mywebapp$(Get-Random -Maximum 100)"
+$webappname="dcaroweb$(Get-Random -Maximum 100)"
 $myResourceGroup="dcaro$(Get-Random -Maximum 100)"
 $location="East US"
 
